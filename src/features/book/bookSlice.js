@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchBook, fetchBooks } from "../../services/api-books";
+import { createNewBook, fetchBook, fetchBooks } from "../../services/api-books";
 
 const initialState = {
   status: "idle",
@@ -19,6 +19,10 @@ const bookSlice = createSlice({
     builder.addCase(fetchBook.fulfilled, (state, action) => {
       state.status = "succeeded";
       state.book = action.payload;
+    });
+    builder.addCase(createNewBook.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      state.books = [...state.books, action.payload];
     });
   },
 });

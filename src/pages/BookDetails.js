@@ -13,7 +13,18 @@ function BookDetails() {
     dispatch(fetchBook(id));
   }, [dispatch, id]);
 
-  return <div>BookDetails</div>;
+  console.log(book);
+  return (
+    <div>
+      <div>BookDetails</div>
+      <h1> {book.name}</h1>
+      <div>
+        <h3>{book.first_name}</h3>
+        <h3>{book.last_name}</h3>
+      </div>
+      <p>{book.isbn}</p>
+    </div>
+  );
 }
 
 export default BookDetails;

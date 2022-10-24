@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { selectStateBooks } from "../features/book/bookSlice";
 import { fetchBooks } from "../services/api-books";
 
@@ -15,10 +16,15 @@ function BooksList() {
   return (
     <>
       <div>BooksList</div>
+      <Link to={`/book`}>
+        <button>New Book</button>
+      </Link>
       <div>
         {books.map((book) => (
           <div key={book.id}>
-            <div>{book.name}</div>
+            <Link to={`/${book.id}`}>
+              <div>{book.name}</div>
+            </Link>
           </div>
         ))}
       </div>
