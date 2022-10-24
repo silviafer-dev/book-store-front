@@ -1,24 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchBooks } from "../../services/api-books";
+import { fetchAuthors } from "../../services/api-authors";
 
 const initialState = {
   status: "idle",
-  books: [],
-  book: {}
+  authors: [],
 };
 
-const bookSlice = createSlice({
-  name: "books",
+const authorSlice = createSlice({
+  name: "authors",
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchBooks.fulfilled, (state, action) => {
+    builder.addCase(fetchAuthors.fulfilled, (state, action) => {
       state.status = "succeeded";
-      state.books = action.payload;
+      state.authors = action.payload;   
     });
   },
 });
 
-export default bookSlice.reducer;
+export default authorSlice.reducer;
 
 export const selectStateBooks = (state) => state.books.books;
