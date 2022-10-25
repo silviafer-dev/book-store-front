@@ -15,7 +15,7 @@ export default function AuthorDetails() {
   console.log(author, "author");
 
   return (
-    <div>
+    <div >
       <div>AuthorDetails</div>
       
       {author.map((author, index) => (

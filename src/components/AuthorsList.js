@@ -15,8 +15,8 @@ export default function AuthorsList() {
   console.log(authors);
 
   return (
-    <div>
-      <div>Author List</div>
+    <div className="w-50 border p-10">
+      <h3>Author List</h3>
       {authors.map((author) => (
         <div key={author.id}>
           <Link to={`/author/${author.id}`} style={{ display: "flex" }}>
@@ -27,9 +27,7 @@ export default function AuthorsList() {
           <p>Id. number: {author.id}</p>
         </div>
       ))}
-      <Link to={`/author`}>
-        <button>Add Author</button>
-      </Link>
+     
     </div>
   );
 }

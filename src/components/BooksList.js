@@ -22,9 +22,7 @@ export default function BooksList() {
      
       </div>
       <div>
-        <Link to={`/book`}>
-          <button>New Book</button>
-        </Link>
+       
         <div>
           {books.map((book) => (
             <div key={book.id}>
