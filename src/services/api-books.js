@@ -16,6 +16,15 @@ export const createNewBook = createAsyncThunk(
   "create/createNewBook",
   async (data) => {
     const response = await axios.post(`${api}/book`, data);
+    console.log(data);
+    return response.data;
+  }
+);
+export const updateBook = createAsyncThunk(
+  "update/updateBook",
+  async ({ id, data }) => {
+    const response = await axios.put(`${api}/book/${id}`, data);
+    console.log(response.data, "resp")
     return response.data;
   }
 );

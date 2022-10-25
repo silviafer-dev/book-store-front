@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+
 import { selectStateOneBook } from "../features/book/bookSlice";
 import { fetchBook } from "../services/api-books";
 
-function BookDetails() {
+export default function BookDetails() {
   const { id } = useParams();
   const book = useSelector(selectStateOneBook);
   const dispatch = useDispatch();
@@ -13,7 +14,6 @@ function BookDetails() {
     dispatch(fetchBook(id));
   }, [dispatch, id]);
 
-  console.log(book);
   return (
     <div>
       <div>BookDetails</div>
@@ -23,8 +23,8 @@ function BookDetails() {
         <h3>{book.last_name}</h3>
       </div>
       <p>{book.isbn}</p>
+
+      
     </div>
   );
 }
-
-export default BookDetails;

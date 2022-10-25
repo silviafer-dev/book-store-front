@@ -7,3 +7,8 @@ export const fetchAuthors = createAsyncThunk("get/fetchAuthors", async () => {
   const response = await axios.get(api);
   return response.data;
 });
+
+export const fetchAuthor = createAsyncThunk("get/fetchAuthor", async (id) => {
+  const response = await axios.get(`${api}/author/${id}`);
+  return response.data;
+});

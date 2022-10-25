@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchAuthors } from "../../services/api-authors";
+import { fetchAuthor, fetchAuthors } from "../../services/api-authors";
 
 const initialState = {
   status: "idle",
   authors: [],
+  author: [],
 };
 
 const authorSlice = createSlice({
@@ -13,11 +14,16 @@ const authorSlice = createSlice({
   extraReducers(builder) {
     builder.addCase(fetchAuthors.fulfilled, (state, action) => {
       state.status = "succeeded";
-      state.authors = action.payload;   
+      state.authors = action.payload;
+    });
+    builder.addCase(fetchAuthor.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      state.authors = action.payload;
     });
   },
 });
 
 export default authorSlice.reducer;
 
-export const selectStateBooks = (state) => state.books.books;
+export const selectStateAuthors = (state) => state.authors.authors;
+export const selectStateOneAuthor = (state) => state.authors.author;

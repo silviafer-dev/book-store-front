@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createNewBook, fetchBook, fetchBooks } from "../../services/api-books";
+import {
+  createNewBook,
+  fetchBook,
+  fetchBooks,
+  updateBook,
+} from "../../services/api-books";
 
 const initialState = {
   status: "idle",
@@ -22,8 +27,26 @@ const bookSlice = createSlice({
     });
     builder.addCase(createNewBook.fulfilled, (state, action) => {
       state.status = "succeeded";
+      console.log(action.payload);
       state.books = [...state.books, action.payload];
     });
+    builder.addCase(updateBook.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      console.log(action.payload);
+      state.books = state.books.map((item) =>
+        item.id === action.payload.id ? action.payload.body : item
+      );
+    });
+    // builder.addCase(updateBook.fulfilled, (state, action) => {
+    //   state.status = "succeeded";
+    //   const index = state.books.findIndex(
+    //     (item) => item.id === action.payload.id
+    //   );
+    //   state.books[index] = {
+    //     ...state.books[index],
+    //     ...action.payload,
+    //   };
+    // });
   },
 });
 

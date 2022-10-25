@@ -1,33 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { createNewBook } from "../services/api-books";
+import { updateBook } from "../services/api-books";
 
-export default function AddBook() {
-  const [book, setBook] = useState({
+export default function UpdateBook({ book }) {
+  const [edit, setEdit] = useState({
     name: "",
     isbn: "",
     author: "",
   });
-
   const dispatch = useDispatch();
+  
+  useEffect(() => {
+    if (book) {
+      setEdit(book);
+    } else {
+      setEdit("");
+    }
+  }, [book]);
 
   const handleChange = (e) => {
-    setBook({ ...book, [e.target.name]: e.target.value });
+    setEdit({ ...edit, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
+    console.log(edit, "edit");
     e.preventDefault();
-    dispatch(createNewBook(book));
+    dispatch(updateBook({id:edit.id, data:edit}));
   };
 
   return (
     <div>
-      <div>Add New Book</div>
+      <div>UpdateBook</div>
       <form action="">
         <label htmlFor="name">
           <input
             type="text"
             name="name"
-            value={book.name}
+            value={edit.name}
             onChange={handleChange}
           />
         </label>
@@ -35,7 +43,7 @@ export default function AddBook() {
           <input
             type="text"
             name="isbn"
-            value={book.isbn}
+            value={edit.isbn}
             onChange={handleChange}
           />
         </label>
@@ -43,7 +51,7 @@ export default function AddBook() {
           <input
             type="number"
             name="author"
-            value={book.author}
+            value={edit.author}
             onChange={handleChange}
           />
         </label>
