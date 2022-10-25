@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateBook } from "../services/api-books";
+import "../sass/update.scss";
 
 export default function UpdateBook({ book }) {
   const [edit, setEdit] = useState({
@@ -9,7 +10,7 @@ export default function UpdateBook({ book }) {
     author: "",
   });
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     if (book) {
       setEdit(book);
@@ -24,14 +25,15 @@ export default function UpdateBook({ book }) {
   const handleSubmit = (e) => {
     console.log(edit, "edit");
     e.preventDefault();
-    dispatch(updateBook({id:edit.id, data:edit}));
+    dispatch(updateBook({ id: edit.id, data: edit }));
   };
 
   return (
-    <div>
-      <div>UpdateBook</div>
-      <form action="">
+    <div className="update">
+      <div className="update__title">Update Book</div>
+      <form className="update__form">
         <label htmlFor="name">
+          Title:
           <input
             type="text"
             name="name"
@@ -40,6 +42,8 @@ export default function UpdateBook({ book }) {
           />
         </label>
         <label htmlFor="isbn">
+          {" "}
+          ISBN code:
           <input
             type="text"
             name="isbn"
@@ -48,6 +52,7 @@ export default function UpdateBook({ book }) {
           />
         </label>
         <label htmlFor="author">
+          ID number author:
           <input
             type="number"
             name="author"
@@ -55,7 +60,9 @@ export default function UpdateBook({ book }) {
             onChange={handleChange}
           />
         </label>
-        <button onClick={handleSubmit}>Save</button>
+        <button className="update__button" onClick={handleSubmit}>
+          Save
+        </button>
       </form>
     </div>
   );
