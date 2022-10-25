@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { selectStateBooks } from "../features/book/bookSlice";
 import { fetchBooks } from "../services/api-books";
 
+
 import UpdateBook from "./UpdateBook";
 
 export default function BooksList() {
@@ -18,7 +19,7 @@ export default function BooksList() {
     <div>
       <div>BooksList</div>
       <div>
-      
+     
       </div>
       <div>
         <Link to={`/book`}>
@@ -27,7 +28,7 @@ export default function BooksList() {
         <div>
           {books.map((book) => (
             <div key={book.id}>
-              <Link to={`/${book.id}`}>
+              <Link to={`/book/${book.id}`}>
                 <div>{book.name}</div>
               </Link>
               <UpdateBook book={book} />

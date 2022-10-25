@@ -18,7 +18,7 @@ const authorSlice = createSlice({
     });
     builder.addCase(fetchAuthor.fulfilled, (state, action) => {
       state.status = "succeeded";
-      state.authors = action.payload;
+      state.author = [...action.payload];
     });
   },
 });
