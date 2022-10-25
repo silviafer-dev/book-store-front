@@ -45,6 +45,8 @@
     border: none;
     margin: 2px;
     padding: 3px;
+    border-radius: 0;
+    border-bottom: 1px solid #a02620;
   }
   .header__nav-bar label {
     display: inline-block;
@@ -63,7 +65,7 @@
   }
   .select-author select {
     display: block;
-    margin: 20px;
+    margin-left: 25px;
     padding: 5px 10px;
     border: none;
     background-color: bisque;

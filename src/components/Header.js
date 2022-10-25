@@ -7,22 +7,22 @@ import { fetchAuthors } from "../services/api-authors";
 
 export default function Header() {
   const authors = useSelector(selectStateAuthors);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function handleChange(value) {
     navigate(value);
   }
 
-  const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchAuthors());
   }, [dispatch]);
-  console.log(authors);
+
   return (
     <div>
       <div className="header">
-        <h1 className="header__title">Book Store</h1>
+        <h1 className="header__title">Good Reads</h1>
         <nav className="header__nav-bar">
           <label htmlFor="hamburger">&#9776;</label>
           <input type="checkbox" id="hamburger" />
