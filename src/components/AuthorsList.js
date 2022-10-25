@@ -24,8 +24,12 @@ export default function AuthorsList() {
               {author.first_name} {author.last_name}
             </h4>
           </Link>
+          <p>Id. number: {author.id}</p>
         </div>
       ))}
+      <Link to={`/author`}>
+        <button>Add Author</button>
+      </Link>
     </div>
   );
 }

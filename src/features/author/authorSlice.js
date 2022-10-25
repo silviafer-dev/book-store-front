@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchAuthor, fetchAuthors } from "../../services/api-authors";
+import {
+  createNewAuthor,
+  fetchAuthor,
+  fetchAuthors,
+} from "../../services/api-authors";
 
 const initialState = {
   status: "idle",
@@ -19,6 +23,11 @@ const authorSlice = createSlice({
     builder.addCase(fetchAuthor.fulfilled, (state, action) => {
       state.status = "succeeded";
       state.author = [...action.payload];
+    });
+    builder.addCase(createNewAuthor.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      console.log(action.payload);
+      state.authors = [...state.authors, action.payload];
     });
   },
 });

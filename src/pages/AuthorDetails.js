@@ -17,6 +17,7 @@ export default function AuthorDetails() {
   return (
     <div>
       <div>AuthorDetails</div>
+      
       {author.map((author, index) => (
         <div key={index}>
           <h6>{author.first_name}</h6>
@@ -25,7 +26,7 @@ export default function AuthorDetails() {
           <p>{author.isbn}</p>
         </div>
       ))}
-      <button>Add Author</button>
+     
     </div>
   );
 }

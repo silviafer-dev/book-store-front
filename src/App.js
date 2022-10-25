@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
+import AddAuthor from "./components/AddAuthor";
 import AddBook from "./components/AddBook";
 import AuthorDetails from "./pages/AuthorDetails";
 import BookDetails from "./pages/BookDetails";
@@ -15,6 +16,7 @@ function App() {
         <Route path="/book/:id" element={<BookDetails />} />
         <Route path="/book" element={<AddBook />} />
         <Route path="/author/:id" element={<AuthorDetails />} />
+        <Route path="/author" element={<AddAuthor />} />
       </Routes>
     </div>
   );
