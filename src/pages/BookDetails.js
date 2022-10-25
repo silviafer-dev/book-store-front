@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { selectStateOneBook } from "../features/book/bookSlice";
 import { fetchBook } from "../services/api-books";
+import UpdateBook from "../components/UpdateBook";
 
 export default function BookDetails() {
   const { id } = useParams();
@@ -23,8 +24,8 @@ export default function BookDetails() {
         <h3>{book.last_name}</h3>
       </div>
       <p>{book.isbn}</p>
-
-      
+      <UpdateBook book={book} />
+      <button className="books__button">Update</button>
     </div>
   );
 }

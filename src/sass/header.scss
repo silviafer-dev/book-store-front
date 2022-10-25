@@ -1,0 +1,82 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background: linear-gradient(to bottom, #eed171, #ffffff);
+  justify-content: space-evenly;
+  padding: 30px;
+  align-items: center;
+  &__title {
+    font-family: "Lobster", cursive;
+    font-size: 70px;
+    color: rgb(131, 24, 21);
+
+    letter-spacing: 3px;
+  }
+  &__button-nav {
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: inherit;
+    border: 2px solid #d1a512;
+    cursor: pointer;
+    &:hover {
+      background-color: #d1a512;
+      color: white;
+    }
+  }
+}
+.header__nav-bar label,
+#hamburger {
+  display: none;
+}
+.select-author select {
+  display: none;
+}
+@media only screen and (max-width: 763px) {
+  .hamburger-items Link {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid #333;
+  }
+  .header__button-nav {
+    border: none;
+    margin: 2px;
+    padding: 3px;
+  }
+  .header__nav-bar label {
+    display: inline-block;
+    color: #a02620;
+    font-style: normal;
+    font-size: 30px;
+    padding: 10px;
+  }
+  .hamburger-items {
+    display: none;
+  }
+  .header__nav-bar input:checked ~ .hamburger-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .select-author select {
+    display: block;
+    margin: 20px;
+    padding: 5px 10px;
+    border: none;
+    background-color: bisque;
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 5%;
+  }
+
+  .header__title {
+    font-size: 50px;
+  }
+}

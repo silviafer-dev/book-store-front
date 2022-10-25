@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectStateBooks } from "../features/book/bookSlice";
 import { fetchBooks } from "../services/api-books";
+import "../sass/bookList.scss";
 
 
-import UpdateBook from "./UpdateBook";
 
 export default function BooksList() {
   const books = useSelector(selectStateBooks);
@@ -16,23 +16,15 @@ export default function BooksList() {
   }, [dispatch]);
 
   return (
-    <div>
-      <div>BooksList</div>
-      <div>
-     
-      </div>
-      <div>
-       
-        <div>
-          {books.map((book) => (
-            <div key={book.id}>
-              <Link to={`/book/${book.id}`}>
-                <div>{book.name}</div>
-              </Link>
-              <UpdateBook book={book} />
-            </div>
-          ))}
-        </div>
+    <div className="books">
+      <div className="books__card-list">
+        {books.map((book) => (
+          <Link key={book.id} to={`/book/${book.id}`} className="books__card">
+            <div className="books__name">{book.name}</div>
+        
+            
+          </Link>
+        ))}
       </div>
     </div>
   );
