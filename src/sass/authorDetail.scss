@@ -1,0 +1,58 @@
+.author-detail {
+  padding: 30px;
+  &__title {
+    padding-left: 30px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+}
+
+.book-container {
+  display: flex;
+}
+.book {
+  &__card {
+    background-image: url("../assets/beige.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+      rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    width: 30%;
+    height: 300px;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+  }
+  &__name {
+    text-align: center;
+    padding: 20px;
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__author-detail {
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+  }
+  &__isbn-detail {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .book-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .book__card {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .book-container {
+    display: block;
+  }
+}

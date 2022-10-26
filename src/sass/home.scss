@@ -1,0 +1,26 @@
+.home {
+  background-color: white;
+  padding-top: 400px;
+  display: flex;
+  padding: 15px;
+  min-height: 100vh;
+  margin-bottom: -100px;
+}
+.select-author select {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
+  .select-author select {
+    display: block;
+    margin-left: 25px;
+    padding: 5px 10px;
+    border: none;
+    background-color: bisque;
+    border-radius: 10px;
+  }
+}

@@ -1,46 +1,33 @@
-# Getting Started with Create React App and Redux
+# Front project - Books App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+The app displays a list of books and related authors with detail pages from the mysql database in the back project . New books and authors can be added and the books can be updated.
 
-## Available Scripts
+## Built with
 
-In the project directory, you can run:
+- [React](https://github.com/facebook/create-react-app)
+- [Redux](https://redux.js.org/) with [Toolkit](https://redux-toolkit.js.org/) template.
+- [React-Router](https://v5.reactrouter.com/web/guides/quick-start)
+- [SCSS](https://sass-lang.com/documentation/)
+- Javascript
 
-### `npm start`
+## Testing e2e
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Cypress](https://docs.cypress.io/guides/overview/why-cypress)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to start the app
 
-### `npm test`
+`git clone https://github.com/silviafer-dev/book-store-front.git`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Install dependency
 
-### `npm run build`
+`npm install` or `yarn`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Run the app
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm start` open the browse in "http://localhost:3000"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Run e2e test
 
-### `npm run eject`
+`npm run cypress:open`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Home Page](./src/assets/homepage.jpg)
