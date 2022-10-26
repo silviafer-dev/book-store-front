@@ -30,7 +30,6 @@
     color: black;
     font-size: 24px;
     font-weight: 700;
-   
   }
   &__author-detail {
     font-size: 20px;
@@ -40,5 +39,20 @@
   }
   &__isbn-detail {
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .book-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .book__card {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .book-container {
+    display: block;
   }
 }

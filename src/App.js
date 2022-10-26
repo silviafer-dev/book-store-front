@@ -12,7 +12,7 @@ import Home from "./pages/Home";
 function App() {
   return (
     <div className="App">
-        <Header />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/book/:id" element={<BookDetails />} />

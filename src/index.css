@@ -5,8 +5,10 @@
   padding: 0;
 }
 
-body {
+body,
+html {
   min-width: 320px;
   font-family: "Montserrat", sans-serif;
- 
+  height: 100%;
 }
+

@@ -33,7 +33,7 @@
   flex-wrap: wrap;
   align-items: center;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .books__card-list {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -43,7 +43,6 @@
   }
 }
 
-
 @media only screen and (max-width: 600px) {
   .books__card-list {
     display: grid;
@@ -51,5 +50,11 @@
   }
   .books__card {
     width: 90%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .books__card-list {
+    display: grid;
+    grid-template-columns: auto;
   }
 }

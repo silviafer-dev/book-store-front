@@ -52,21 +52,23 @@ export default function AddBook() {
           />
         </label>
         <label htmlFor="author">
-          ID number author:
-          <input
+          ID author:
+          <input 
             type="number"
             name="author"
             value={book.author}
             onChange={handleChange}
           />
         </label>
-        <button className="add__button" onClick={handleSubmit}>
-          Save
-        </button>
+        <div>
+          <Link className="back-button" to="/">
+            &#10229; Go Back
+          </Link>
+          <button className="add__button" onClick={handleSubmit}>
+            Save
+          </button>
+        </div>
       </form>
-      <Link className="back-button" to="/">
-        &#10229; Go Back
-      </Link>
     </div>
   );
 }
