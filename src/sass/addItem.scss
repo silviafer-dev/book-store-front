@@ -16,7 +16,7 @@
   &__form {
     display: flex;
     flex-direction: column;
-     margin-top: 20px;
+    margin-top: 20px;
     padding: 4px 5px;
     align-items: center;
     transition: transform 0.5s;
@@ -34,7 +34,6 @@
         border-bottom: 1px solid chocolate;
         font-size: 14px;
         color: chocolate;
-
       }
     }
   }
@@ -56,7 +55,7 @@
       background-color: rgb(132, 58, 5);
       color: white;
     }
-    &--author{
+    &--author {
       margin-top: 80px;
     }
   }
@@ -77,4 +76,9 @@
     background-color: rgb(132, 58, 5);
     color: white;
   }
+ 
+}
+.error {
+  margin: 5px 0;
+  color: red;
 }

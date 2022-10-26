@@ -17,7 +17,7 @@ export default function Header() {
               <button className="header__button-nav ">Add New Author</button>
             </Link>
             <Link to={`/book`}>
-              <button className="header__button-nav ">Add New Book</button>
+              <button className="header__button-nav add-book-button">Add New Book</button>
             </Link>
           </div>
         </nav>

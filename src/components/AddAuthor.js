@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../sass/addItem.scss";
 
 export default function AddAuthor() {
+  const [error, setError] = useState("");
   const [author, setAuthor] = useState({
     first_name: "",
     last_name: "",
@@ -19,10 +20,11 @@ export default function AddAuthor() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (author.first_name === "" || author.last_name === "") {
-      alert("Empty lines");
+      setError("Empty lines");
     } else {
       dispatch(createNewAuthor(author));
       navigate("/");
+      setError("");
     }
   };
 
@@ -50,17 +52,19 @@ export default function AddAuthor() {
             required
           />
         </label>
-
-        <button
-          className="add__button add__button--author"
-          onClick={handleSubmit}
-        >
-          Save
-        </button>
+        <div>
+          <Link className="back-button back-button--author" to="/">
+            &#10229; Go Back
+          </Link>
+          <button
+            className="add__button add__button--author"
+            onClick={handleSubmit}
+          >
+            Save
+          </button>
+          <p className="error">{error && error}</p>
+        </div>
       </form>
-      <Link className="back-button back-button--author" to="/">
-        &#10229; Go Back
-      </Link>
     </div>
   );
 }

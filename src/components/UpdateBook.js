@@ -35,6 +35,7 @@ export default function UpdateBook({ book }) {
         <label htmlFor="name">
           Title:
           <input
+          className="input-name"
             type="text"
             name="name"
             value={edit.name}
@@ -45,6 +46,7 @@ export default function UpdateBook({ book }) {
           {" "}
           ISBN code:
           <input
+          className="input-isbn"
             type="text"
             name="isbn"
             value={edit.isbn}
@@ -54,13 +56,14 @@ export default function UpdateBook({ book }) {
         <label htmlFor="author">
           ID number author:
           <input
+          className="input-id"
             type="number"
             name="author"
             value={edit.author}
             onChange={handleChange}
           />
         </label>
-        <button className="update__button" onClick={handleSubmit}>
+        <button type='submit' className="update__button submit" onClick={handleSubmit}>
           Save
         </button>
       </form>

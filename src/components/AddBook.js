@@ -5,6 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "../sass/addItem.scss";
 
 export default function AddBook() {
+  const [error, setError] = useState("");
   const [book, setBook] = useState({
     name: "",
     isbn: "",
@@ -19,10 +20,12 @@ export default function AddBook() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (book.name === "" || book.isbn === "" || book.author === "") {
-      alert("Empty lines");
+      setError('Empty lines');
+     
     } else {
       dispatch(createNewBook(book));
       navigate("/");
+      setError("");
     }
   };
 
@@ -33,6 +36,7 @@ export default function AddBook() {
         <label htmlFor="name">
           Book Title:
           <input
+          className="input-title"
             type="text"
             name="name"
             value={book.name}
@@ -44,6 +48,7 @@ export default function AddBook() {
           {" "}
           ISBN code:
           <input
+          className="input-isbn"
             type="text"
             name="isbn"
             value={book.isbn}
@@ -53,7 +58,8 @@ export default function AddBook() {
         </label>
         <label htmlFor="author">
           ID author:
-          <input 
+          <input
+          className="input-author"
             type="number"
             name="author"
             value={book.author}
@@ -67,6 +73,7 @@ export default function AddBook() {
           <button className="add__button" onClick={handleSubmit}>
             Save
           </button>
+          <p className="error">{error && error}</p>
         </div>
       </form>
     </div>
