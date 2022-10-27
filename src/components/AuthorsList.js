@@ -13,8 +13,7 @@ export default function AuthorsList() {
   useEffect(() => {
     dispatch(fetchAuthors());
   }, [dispatch]);
-  console.log(authors);
-
+  
   return (
     <div className="author">
       <h3 className="author__title">Authors</h3>
